@@ -40,13 +40,12 @@ export const AdminPage = () => {
     <PageLayout>
       <div className="content-layout">
         <h1 id="page-title" className="content__title">
-          Admin Page
+          UserProfile page
         </h1>
         <div className="content__body">
           <p id="page-description">
             <span>
-              This page retrieves an <strong>admin message</strong> from an
-              external API.
+              This page retrieves the <strong>user profile</strong> from the backend.
             </span>
             <span>
               <strong>

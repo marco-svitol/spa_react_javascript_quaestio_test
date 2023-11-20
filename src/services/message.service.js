@@ -4,7 +4,7 @@ const apiServerUrl = process.env.REACT_APP_API_SERVER_URL;
 
 export const getPublicResource = async () => {
   const config = {
-    url: `${apiServerUrl}/api/messages/public`,
+    url: `${apiServerUrl}/api/v2/test`,
     method: "GET",
     headers: {
       "content-type": "application/json",
@@ -21,7 +21,8 @@ export const getPublicResource = async () => {
 
 export const getProtectedResource = async (accessToken) => {
   const config = {
-    url: `${apiServerUrl}/api/messages/protected`,
+    url: `${apiServerUrl}/api/v2/auth0search?tecarea=2&uid=1&pdfrom=20230420&pdto=20230520`,
+    //url: `${apiServerUrl}/api/messages/public`,
     method: "GET",
     headers: {
       "content-type": "application/json",
@@ -39,7 +40,7 @@ export const getProtectedResource = async (accessToken) => {
 
 export const getAdminResource = async (accessToken) => {
   const config = {
-    url: `${apiServerUrl}/api/messages/admin`,
+    url: `${apiServerUrl}/api/v2/auth0userprofile?uid=1`,
     method: "GET",
     headers: {
       "content-type": "application/json",
