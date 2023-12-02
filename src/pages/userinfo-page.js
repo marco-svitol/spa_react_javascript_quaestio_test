@@ -2,9 +2,9 @@ import { useAuth0 } from "@auth0/auth0-react";
 import React, { useEffect, useState } from "react";
 import { CodeSnippet } from "../components/code-snippet";
 import { PageLayout } from "../components/page-layout";
-import { getProtectedResource } from "../services/message.service";
+import { getUserInfo } from "../services/message.service";
 
-export const ProtectedPage = () => {
+export const UserInfoPage = () => {
   const [message, setMessage] = useState("");
 
   const { user, getAccessTokenSilently } = useAuth0();
@@ -14,7 +14,7 @@ export const ProtectedPage = () => {
 
     const getMessage = async () => {
       const accessToken = await getAccessTokenSilently();
-      const { data, error } = await getProtectedResource(accessToken, user.sub);
+      const { data, error } = await getUserInfo(accessToken, user.sub);
 
       if (!isMounted) {
         return;
@@ -40,18 +40,18 @@ export const ProtectedPage = () => {
     <PageLayout>
       <div className="content-layout">
         <h1 id="page-title" className="content__title">
-          Search page
+          UserInfo page
         </h1>
         <div className="content__body">
           <p id="page-description">
             <span>
-              This page retrieves a <strong>search page</strong> from the backend.
+              This page retrieves the <strong>user info</strong> from Auth0.
             </span>
             <span>
               <strong>Only authenticated users can access this page.</strong>
             </span>
           </p>
-          <CodeSnippet title="Protected Message" code={message} />
+          <CodeSnippet title="UserInfo Message" code={message} />
         </div>
       </div>
     </PageLayout>

@@ -13,6 +13,7 @@ export const NavBarTabs = () => {
         <>
           <NavBarTab path="/protected" label="Search_Protected" />
           <NavBarTab path="/admin" label="UserProfille_Proteced" />
+          <NavBarTab path="/userinfo" label="UserInfo_Proteced" />
         </>
       )}
     </div>

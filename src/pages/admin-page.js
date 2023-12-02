@@ -7,14 +7,14 @@ import { getAdminResource } from "../services/message.service";
 export const AdminPage = () => {
   const [message, setMessage] = useState("");
 
-  const { getAccessTokenSilently } = useAuth0();
+  const { user, getAccessTokenSilently } = useAuth0();
 
   useEffect(() => {
     let isMounted = true;
 
     const getMessage = async () => {
       const accessToken = await getAccessTokenSilently();
-      const { data, error } = await getAdminResource(accessToken);
+      const { data, error } = await getAdminResource(accessToken, user.sub);
 
       if (!isMounted) {
         return;
