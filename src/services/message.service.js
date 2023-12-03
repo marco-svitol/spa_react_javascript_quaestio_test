@@ -22,7 +22,7 @@ export const getPublicResource = async () => {
 
 export const getProtectedResource = async (accessToken, userSub) => {
   const config = {
-    url: `${apiServerUrl}/api/v2/auth0search?pa=1&tecarea=2&pdfrom=20230420&pdto=20230520`,
+    url: `${apiServerUrl}/api/v2/search?pa=1&tecarea=2&pdfrom=20230420&pdto=20230520`,
     //url: `${apiServerUrl}/api/messages/public`,
     method: "GET",
     headers: {
@@ -41,7 +41,7 @@ export const getProtectedResource = async (accessToken, userSub) => {
 
 export const getAdminResource = async (accessToken,userSub) => {
   const config = {
-    url: `${apiServerUrl}/api/v2/auth0userprofile`,
+    url: `${apiServerUrl}/api/v2/userprofile`,
     method: "GET",
     headers: {
       "content-type": "application/json",
@@ -59,7 +59,7 @@ export const getAdminResource = async (accessToken,userSub) => {
 
 export const getUserInfo = async (accessToken) => {
   const config = {
-    url: `${domain}/userinfo`,
+    url: `${domain}/api/v2/opstest`,
     method: "GET",
     headers: {
       "content-type": "application/json",
