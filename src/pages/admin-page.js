@@ -34,7 +34,7 @@ export const AdminPage = () => {
     return () => {
       isMounted = false;
     };
-  }, [getAccessTokenSilently]);
+  }, [getAccessTokenSilently, user.sub]);
 
   return (
     <PageLayout>
