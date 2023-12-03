@@ -59,7 +59,7 @@ export const getAdminResource = async (accessToken,userSub) => {
 
 export const getUserInfo = async (accessToken) => {
   const config = {
-    url: `${domain}/api/v2/opstest`,
+    url: `${apiServerUrl}/api/v2/opstest`,
     method: "GET",
     headers: {
       "content-type": "application/json",
