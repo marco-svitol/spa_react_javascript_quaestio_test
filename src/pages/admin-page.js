@@ -14,6 +14,7 @@ export const AdminPage = () => {
 
     const getMessage = async () => {
       const accessToken = await getAccessTokenSilently();
+      console.log (accessToken);
       const { data, error } = await getAdminResource(accessToken, user.sub);
 
       if (!isMounted) {
